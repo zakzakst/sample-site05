@@ -1,0 +1,67 @@
+// 色
+$c_primary: #b25900;
+$c_primary_bg: #fff3e5;
+$c_primary_light: #fee3c2;
+$c_primary_dark: #804000;
+$c_secondary: #343434;
+$c_secondary_dark: #000;
+$c_accent: #ee8b26;
+$c_accent_dark: #d07011;
+$c_caution: #ca0000;
+$c_caution_bg: #ffefef;
+$c_white: #fff;
+$c_black: #343434;
+$c_gray: #888;
+$c_text: #343434;
+$c_border: #888;
+$c_bg_light: #ececec;
+
+// フォントファミリー
+$ff_default: 'Noto Sans JP', sans-serif;
+
+// Zインデックス
+$z_float: 10;
+$z_fixed: 100;
+
+// デュレーション
+$d_default: .5s;
+
+// 透明
+$op_default: .5;
+
+// 影
+$shadow_1: 0 4px 8px rgba(#000, 0.2);
+$shadow_2: 0 4px 8px rgba(#000, 0.3);
+
+// 角丸
+$radius_default: 4px;
+
+// ブレークポイント
+$break_points: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// コンテナサイズ
+$width_containers: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 996px,
+  xxl: 996px,
+);
+
+// スペース
+$spaces: (
+  0: 0,
+  1: 8,
+  2: 16,
+  3: 24,
+  4: 32,
+  5: 40,
+  6: 48,
+  auto: auto,
+);

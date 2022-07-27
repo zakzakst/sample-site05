@@ -1,0 +1,48 @@
+@use "sass:map";
+@use "variables" as v;
+
+@mixin Mq($name) {
+  @media screen and (min-width: map.get(v.$break_points, $name)) {
+    @content;
+  }
+}
+
+@mixin container() {
+  width: 100%;
+  height: 100%;
+  max-width: 315px;
+  margin: 0 auto;
+  @each $break_point_key, $break_point in v.$break_points {
+    @media screen and (min-width: #{$break_point}) {
+      max-width: map.get(v.$width_containers, $break_point_key);
+    }
+  }
+}
+
+@mixin HoverOp() {
+  transition: opacity v.$d_default;
+  &:hover {
+    opacity: v.$op_default;
+  }
+}
+
+@mixin Skeleton() {
+  background-image: linear-gradient(
+    105deg,
+    v.$c_bg_light 0,
+    v.$c_bg_light 40%,
+    v.$c_white 50%,
+    v.$c_bg_light 60%
+  );
+  background-size: 200% 100%;
+  animation: KeyframeSkeleton v.$d_default linear infinite;
+}
+
+@keyframes KeyframeSkeleton {
+  0% {
+    background-position: 200%;
+  }
+  100% {
+    background-position: 0;
+  }
+}

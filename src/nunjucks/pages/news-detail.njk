@@ -1,0 +1,53 @@
+{% extends 'layouts/has-aside.njk' %}
+{% set PAGE_DATA = {
+  TITLE: 'お知らせ詳細',
+  DESCRIPTION: 'ページ概要',
+  NAV: 'news',
+  BREADCRUMB_ITEMS: [
+    {
+      link: '#',
+      name: 'HOME'
+    },
+    {
+      link: '#',
+      name: 'お知らせ'
+    },
+    {
+      link: '#',
+      name: 'お知らせ詳細',
+      current: true
+    }
+  ]
+} %}
+
+{% set PREV_ITEM = {
+  title: '前のタイトル',
+  link: '#'
+} %}
+
+{% set NEXT_ITEM = {
+  title: '次のタイトル',
+  link: '#'
+} %}
+
+{# ▼▼▼ コンポーネント読み込み ▼▼▼ #}
+{% from 'components/hero.njk' import default as HERO %}
+{% from 'components/breadcrumb.njk' import default as BREADCRUMB %}
+{% from 'components/news-pagination.njk' import default as NEWS_PAGINATION %}
+{# ▲▲▲ コンポーネント読み込み ▲▲▲ #}
+
+{% block HERO_CONTENT %}
+  {{ HERO('お知らせ詳細', 'NEWS') }}
+{% endblock %}
+
+{% block PAGE_CONTENT %}
+  {{ BREADCRUMB(PAGE_DATA.BREADCRUMB_ITEMS) }}
+  <div>ページ内容</div>
+  {{ NEWS_PAGINATION(PREV_ITEM, NEXT_ITEM) }}
+{% endblock %}
+
+{% block BOTTOM_CONTENT %}
+  <div class="mt-5">
+    {% include 'components/contact.njk' %}
+  </div>
+{% endblock %}

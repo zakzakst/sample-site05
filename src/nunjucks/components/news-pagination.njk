@@ -1,0 +1,12 @@
+{% macro default(PREV_ITEM, NEXT_ITEM) %}
+  <nav class="mt-5">
+    <ul class="pagination justify-content-center">
+      {% if PREV_ITEM.title %}
+        <li class="page-item"><a href="{{ PREV_ITEM.link }}" class="page-link">{{ PREV_ITEM.title }}</a></li>
+      {% endif %}
+      {% if NEXT_ITEM.title %}
+        <li class="page-item"><a href="{{ NEXT_ITEM.link }}" class="page-link">{{ NEXT_ITEM.title }}</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endmacro %}

@@ -1,0 +1,86 @@
+{% set NAV_ITEMS = [
+  {
+    heading: '製品情報',
+    links: [
+      { link: '#', label: '製品情報トップ' },
+      { link: '#', label: '製品詳細' },
+      { link: '#', label: '導入のご相談' },
+      { link: '#', label: '導入事例' }
+    ]
+  },
+  {
+    heading: 'お知らせ',
+    links: [
+      { link: '#', label: 'ニュースリリーストップ' },
+      { link: '#', label: '月別アーカイブ' }
+    ]
+  },
+  {
+    heading: '会社情報',
+    links: [
+      { link: '#', label: '会社情報トップ' },
+      { link: '#', label: '企業概要' },
+      { link: '#', label: '社長挨拶' },
+      { link: '#', label: '事業案内' },
+      { link: '#', label: 'アクセスマップ' }
+    ]
+  }
+] %}
+
+{% set SNS_ITEMS = [
+  {
+    href: '#',
+    icon: 'bi-facebook'
+  },
+  {
+    href: '#',
+    icon: 'bi-instagram'
+  },
+  {
+    href: '#',
+    icon: 'bi-twitter'
+  }
+] %}
+
+<!-- ▼▼▼ フッター ▼▼▼ -->
+<footer class="py-4 text-light bg-dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          {% for ITEM in NAV_ITEMS %}
+            <div class="col-4">
+              <div class="row g-2">
+                <div class="col-4">{{ ITEM.heading }}</div>
+                <div class="col-8">
+                  <ul class="list-unstyled">
+                    {% for LINK in ITEM.links %}
+                      <li><a href="{{ LINK.href }}" class="link-secondary text-decoration-none">{{ LINK.label }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+      <div class="col-4 text-end">
+        <div>お問い合わせ</div>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-secondary text-decoration-none">03-1234-5678</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">adobexd@mail.com</a></li>
+          <li><a href="#" class="text-secondary text-decoration-none">よくあるご質問</a></li>
+        </ul>
+        <p class="mt-2">
+          {% for ITEM in SNS_ITEMS %}
+            <a href="{{ ITEM.href }}" class="d-inline-block ms-2 text-white text-decoration-none">
+              <i class="{{ ITEM.icon }}"></i>
+            </a>
+          {% endfor %}
+        </p>
+      </div>
+    </div>
+    <p class="mb-0 text-end">Copyright &copy; XXXXX 2022. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- ▲▲▲ フッター ▲▲▲ -->

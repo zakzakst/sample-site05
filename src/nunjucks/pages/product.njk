@@ -1,0 +1,93 @@
+{% extends 'layouts/has-aside.njk' %}
+{% set PAGE_DATA = {
+  TITLE: '製品情報',
+  DESCRIPTION: 'ページ概要',
+  NAV: 'product',
+  BREADCRUMB_ITEMS: [
+    {
+      link: '#',
+      name: 'HOME'
+    },
+    {
+      link: '#',
+      name: '製品情報',
+      current: true
+    }
+  ]
+} %}
+
+{% set PRODUCTS = [
+  {
+    name: '製品名が入ります',
+    thumb: 'https://picsum.photos/id/237/400/400',
+    description: '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+    link: '#'
+  },
+  {
+    name: '製品名が入ります',
+    thumb: 'https://picsum.photos/id/238/400/400',
+    description: '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+    link: '#'
+  },
+  {
+    name: '製品名が入ります',
+    thumb: 'https://picsum.photos/id/239/400/400',
+    description: '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+    link: '#'
+  },
+  {
+    name: '製品名が入ります',
+    thumb: 'https://picsum.photos/id/240/400/400',
+    description: '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+    link: '#'
+  },
+  {
+    name: '製品名が入ります',
+    thumb: 'https://picsum.photos/id/241/400/400',
+    description: '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+    link: '#'
+  }
+] %}
+
+{% set TAB_ITEMS = [
+  {
+    name: '全て',
+    link: '#',
+    active: true
+  },
+  {
+    name: 'カテゴリー1',
+    link: '#',
+    active: false
+  },
+  {
+    name: 'カテゴリー2',
+    link: '#',
+    active: false
+  }
+] %}
+
+{# ▼▼▼ コンポーネント読み込み ▼▼▼ #}
+{% from 'components/hero.njk' import default as HERO %}
+{% from 'components/breadcrumb.njk' import default as BREADCRUMB %}
+{% from 'components/product-links.njk' import default as PRODUCT_LINKS %}
+{% from 'components/tabs.njk' import default as TABS %}
+{# ▲▲▲ コンポーネント読み込み ▲▲▲ #}
+
+{% block HERO_CONTENT %}
+  {{ HERO('製品情報', 'PRODUCT') }}
+{% endblock %}
+
+{% block PAGE_CONTENT %}
+  {{ BREADCRUMB(PAGE_DATA.BREADCRUMB_ITEMS) }}
+  {{ TABS(TAB_ITEMS) }}
+  <div class="mt-2">
+    {{ PRODUCT_LINKS(PRODUCTS) }}
+  </div>
+{% endblock %}
+
+{% block BOTTOM_CONTENT %}
+  <div class="mt-5">
+    {% include 'components/contact.njk' %}
+  </div>
+{% endblock %}

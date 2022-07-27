@@ -1,0 +1,37 @@
+{% extends 'layouts/default.njk' %}
+{% set PAGE_DATA = {
+  TITLE: 'ページタイトル',
+  DESCRIPTION: 'ページ概要',
+  NAV: 'default',
+  BREADCRUMB_ITEMS: [
+    {
+      link: '#',
+      name: 'HOME'
+    },
+    {
+      link: '#',
+      name: 'デフォルトレイアウト',
+      current: true
+    }
+  ]
+} %}
+
+{# ▼▼▼ コンポーネント読み込み ▼▼▼ #}
+{% from 'components/hero.njk' import default as HERO %}
+{% from 'components/breadcrumb.njk' import default as BREADCRUMB %}
+{# ▲▲▲ コンポーネント読み込み ▲▲▲ #}
+
+{% block HERO_CONTENT %}
+  {{ HERO('ページタイトル', 'SUB TITLE') }}
+{% endblock %}
+
+{% block PAGE_CONTENT %}
+  {{ BREADCRUMB(PAGE_DATA.BREADCRUMB_ITEMS) }}
+  <div>ページ内容</div>
+{% endblock %}
+
+{% block FIX_CONTENT %}
+{# <!-- ▼▼▼ 固定要素（モーダルなど） ▼▼▼ -->
+<div>固定要素</div>
+<!-- ▲▲▲ 固定要素（モーダルなど） ▲▲▲ --> #}
+{% endblock %}

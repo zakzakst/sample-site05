@@ -1,0 +1,35 @@
+{% set NAV_ITEMS = [
+  {
+    id: 'about',
+    link: '/about.html',
+    label: '○○○○について'
+  },
+  {
+    id: 'menu',
+    link: '/menu.html',
+    label: 'メニュー'
+  },
+  {
+    id: 'cafe',
+    link: '/cafe.html',
+    label: '店内設備'
+  },
+  {
+    id: 'news',
+    link: '/news/',
+    label: 'お知らせ'
+  },
+  {
+    id: 'recruit',
+    link: '/recruit.html',
+    label: '採用情報'
+  }
+] %}
+
+{%- import './pc.njk' as HEADER_PC -%}
+{# {%- import './sp.njk' as HEADER_SP -%} #}
+
+
+{{ HEADER_PC.default(NAV_ITEMS, PAGE_DATA) }}
+{# {{ HEADER_SP.default(NAV_ITEMS, PAGE_DATA) }} #}
+

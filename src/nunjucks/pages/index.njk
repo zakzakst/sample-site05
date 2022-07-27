@@ -1,0 +1,18 @@
+{% extends 'layouts/plain.njk' %}
+{% set PAGE_DATA = {
+  TITLE: 'トップ',
+  DESCRIPTION: 'ページ概要',
+  NAV: 'top'
+} %}
+
+{% block PAGE_CONTENT %}
+  {% include 'top/hero.njk' %}
+  <div class="container py-4">
+    {% include 'top/about.njk' %}
+    {% include 'top/product.njk' %}
+    {% include 'top/news.njk' %}
+    <div class="mt-5">
+      {% include 'components/contact.njk' %}
+    </div>
+  </div>
+{% endblock %}

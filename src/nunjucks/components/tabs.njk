@@ -1,0 +1,13 @@
+{% macro default(ITEMS) %}
+  <ul class="nav nav-pills">
+    {% for ITEM in ITEMS %}
+      <li class="nav-item">
+        {% if ITEM.active %}
+          <a href="{{ ITEM.link }}" class="nav-link active">{{ ITEM.name }}</a>
+        {% else %}
+          <a href="{{ ITEM.link }}" class="nav-link">{{ ITEM.name }}</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

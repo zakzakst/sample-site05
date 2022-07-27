@@ -1,0 +1,55 @@
+{% set NEWS_ITEMS = [
+  {
+    date: '2022/07/01',
+    category: 'カテゴリー',
+    title: 'ニュースタイトルが入ります。',
+    link: '#'
+  },
+  {
+    date: '2022/06/01',
+    category: 'カテゴリー',
+    title: 'ニュースタイトルが入ります。',
+    link: '#'
+  },
+  {
+    date: '2022/05/01',
+    category: 'カテゴリー',
+    title: 'ニュースタイトルが入ります。',
+    link: '#'
+  },
+  {
+    date: '2022/04/01',
+    category: 'カテゴリー',
+    title: 'ニュースタイトルが入ります。',
+    link: '#'
+  },
+  {
+    date: '2022/03/01',
+    category: 'カテゴリー',
+    title: 'ニュースタイトルが入ります。',
+    link: '#'
+  },
+  {
+    date: '2022/02/01',
+    category: 'カテゴリー',
+    title: 'ニュースタイトルが入ります。',
+    link: '#'
+  },
+  {
+    date: '2022/01/01',
+    category: 'カテゴリー',
+    title: 'ニュースタイトルが入ります。',
+    link: '#'
+  }
+] %}
+
+{# ▼▼▼ コンポーネント読み込み ▼▼▼ #}
+{% from 'components/news-list.njk' import default as NEWS_LIST %}
+{# ▲▲▲ コンポーネント読み込み ▲▲▲ #}
+
+<!-- ▼▼▼ お知らせ ▼▼▼ -->
+<section class="mt-5">
+  <h2>お知らせ</h2>
+  {{ NEWS_LIST(NEWS_ITEMS) }}
+</section>
+<!-- ▲▲▲ お知らせ ▲▲▲ -->

@@ -1,0 +1,48 @@
+{% set ASIDE_ITEMS = [
+  {
+    heading: '製品情報',
+    links: [
+      { link: '#', label: '製品情報トップ' },
+      { link: '#', label: '製品詳細' },
+      { link: '#', label: '導入のご相談' },
+      { link: '#', label: '導入事例' }
+    ]
+  },
+  {
+    heading: 'お知らせ',
+    links: [
+      { link: '#', label: 'ニュースリリーストップ' },
+      { link: '#', label: '月別アーカイブ' }
+    ]
+  },
+  {
+    heading: '会社情報',
+    links: [
+      { link: '#', label: '会社情報トップ' },
+      { link: '#', label: '企業概要' },
+      { link: '#', label: '社長挨拶' },
+      { link: '#', label: '事業案内' },
+      { link: '#', label: 'アクセスマップ' }
+    ]
+  }
+] %}
+
+<!-- ▼▼▼ サイドバー ▼▼▼ -->
+<aside>
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="キーワードを入力">
+    <button class="btn btn-secondary" type="button">検索</button>
+  </div>
+
+  {% for ITEM in ASIDE_ITEMS %}
+    <div class="mt-4">
+      <h4>{{ ITEM.heading }}</h4>
+      <div class="list-group">
+        {% for LINK in ITEM.links %}
+          <a href="{{ LINK.link }}" class="list-group-item list-group-item-action">{{ LINK.label }}</a>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</aside>
+<!-- ▲▲▲ サイドバー ▲▲▲ -->

@@ -1,0 +1,11 @@
+{% macro default(ITEMS) %}
+  <div class="list-group list-group-flush">
+    {% for ITEM in ITEMS %}
+      <a href="{{ ITEM.link }}" class="list-group-item list-group-item-action">
+        {{ ITEM.date }}
+        <span class="badge bg-secondary">{{ ITEM.category }}</span>
+        {{ ITEM.title }}
+      </a>
+    {% endfor %}
+  </div>
+{% endmacro %}
