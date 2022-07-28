@@ -30,57 +30,51 @@
 {% set SNS_ITEMS = [
   {
     href: '#',
-    icon: 'bi-facebook'
+    icon: 'fab fa-facebook-f'
   },
   {
     href: '#',
-    icon: 'bi-instagram'
+    icon: 'fab fa-instagram'
   },
   {
     href: '#',
-    icon: 'bi-twitter'
+    icon: 'fab fa-twitter'
   }
 ] %}
 
 <!-- ▼▼▼ フッター ▼▼▼ -->
-<footer class="py-4 text-light bg-dark">
-  <div class="container">
-    <div class="row">
-      <div class="col-8">
-        <div class="row">
-          {% for ITEM in NAV_ITEMS %}
-            <div class="col-4">
-              <div class="row g-2">
-                <div class="col-4">{{ ITEM.heading }}</div>
-                <div class="col-8">
-                  <ul class="list-unstyled">
-                    {% for LINK in ITEM.links %}
-                      <li><a href="{{ LINK.href }}" class="link-secondary text-decoration-none">{{ LINK.label }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          {% endfor %}
-        </div>
+<footer class="bg-gray-900 px-2 py-8 text-white">
+  <div class="container mx-auto">
+    <div class="flex justify-between">
+      <div class="">
+        <a href="/">LOGO</a>
       </div>
-      <div class="col-4 text-end">
-        <div>お問い合わせ</div>
-        <ul class="list-unstyled">
-          <li><a href="#" class="text-secondary text-decoration-none">03-1234-5678</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none">adobexd@mail.com</a></li>
-          <li><a href="#" class="text-secondary text-decoration-none">よくあるご質問</a></li>
-        </ul>
-        <p class="mt-2">
-          {% for ITEM in SNS_ITEMS %}
-            <a href="{{ ITEM.href }}" class="d-inline-block ms-2 text-white text-decoration-none">
-              <i class="{{ ITEM.icon }}"></i>
-            </a>
-          {% endfor %}
-        </p>
+      <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+        {% for ITEM in NAV_ITEMS %}
+          <div>
+            <h2 class="mb-6 text-sm font-semibold">{{ ITEM.heading }}</h2>
+            <ul class="text-gray-400">
+              {% for LINK in ITEM.links %}
+                <li class="mb-4">
+                  <a href="{{ LINK.href }}" class="hover:underline">{{ LINK.label }}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
       </div>
     </div>
-    <p class="mb-0 text-end">Copyright &copy; XXXXX 2022. All Rights Reserved.</p>
+    <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+    <div class="sm:flex sm:items-center sm:justify-between">
+      <p class="text-sm text-gray-500 sm:text-center">Copyright &copy; XXXXX 2022. All Rights Reserved.</p>
+      <div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
+        {% for ITEM in SNS_ITEMS %}
+          <a href="{{ ITEM.href }}" class="text-gray-500 hover:text-white">
+            <i class="{{ ITEM.icon }}"></i>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
   </div>
 </footer>
 <!-- ▲▲▲ フッター ▲▲▲ -->
