@@ -1,32 +1,36 @@
 {% macro default(NAV_ITEMS, PAGE_DATA) %}
 <!-- ▼▼▼ ヘッダー（PC） ▼▼▼ -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
+<nav class="bg-white px-2 sm:px-4 py-2.5">
+  <div class="container flex flex-wrap justify-between items-center mx-auto">
     {% if PAGE_DATA.NAV == 'top' %}
-      <h1 class="navbar-brand my-0">LOGO</h1>
+      <h1>LOGO</h1>
     {% else %}
-      <a href="/" class="navbar-brand my-0">LOGO</a>
+      <a href="/">LOGO</a>
     {% endif %}
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button type="button" class="lg:hidden px-3 py-2.5 text-sm text-white bg-blue-700 rounded-lg hover:bg-blue-800">
+      <i class="fas fa-bars"></i>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <div class="hidden lg:flex">
+      <ul class="flex flex-row mr-4">
         {% for ITEM in NAV_ITEMS %}
           {% if ITEM.id == PAGE_DATA.NAV %}
-            {% set CURRENT_CLASS = ' active' %}
+            {% set CURRENT_CLASS = ' text-blue-700' %}
           {% else %}
             {% set CURRENT_CLASS = '' %}
           {% endif %}
           <li class="nav-item">
-            <a href="{{ ITEM.link }}" class="nav-link{{ CURRENT_CLASS }}">{{ ITEM.label }}</a>
+            <a href="{{ ITEM.link }}" class="block px-4 py-2{{ CURRENT_CLASS }}">{{ ITEM.label }}</a>
           </li>
         {% endfor %}
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="キーワードを入力">
-        <button class="btn btn-primary flex-shrink-0" type="submit">検索</button>
-      </form>
+      <div class="flex">
+        <div class="relative w-48">
+          <input type="search" class="block p-2.5 w-full z-20 text-sm bg-gray-50 rounded-lg border border-gray-300" placeholder="キーワードを入力" required>
+          <button type="button" class="absolute top-0 bottom-0 right-0 px-3 py-2.5 text-sm text-white bg-blue-700 rounded-r-lg hover:bg-blue-800">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
