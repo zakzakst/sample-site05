@@ -1,13 +1,26 @@
 {% macro default(ITEMS) %}
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      {% for ITEM in ITEMS %}
-        {% if ITEM.current %}
-          <li class="breadcrumb-item active" aria-current="page">{{ ITEM.name }}</li>
+<nav class="flex">
+  <ol class="inline-flex items-center space-x-1 md:space-x-3">
+    {% for ITEM in ITEMS %}
+      <li class="inline-flex items-center">
+        {% if loop.index == 1 %}
+          <a href="{{ ITEM.link }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900">
+            <i class="fas fa-home mr-2"></i>
+            {{ ITEM.name }}
+          </a>
+        {% elif loop.index == ITEMS.length %}
+          <span class="inline-flex items-center text-sm font-medium text-gray-500">
+            <i class="fas fa-angle-right mr-2"></i>
+            {{ ITEM.name }}
+          </span>
         {% else %}
-          <li class="breadcrumb-item"><a href="{{ ITEM.link }}">{{ ITEM.name }}</a></li>
+          <a href="{{ ITEM.link }}" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-gray-900">
+            <i class="fas fa-angle-right mr-2"></i>
+            {{ ITEM.name }}
+          </a>
         {% endif %}
-      {% endfor %}
-    </ol>
-  </nav>
+      </li>
+    {% endfor %}
+  </ol>
+</nav>
 {% endmacro %}
