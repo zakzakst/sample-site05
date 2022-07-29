@@ -1,20 +1,21 @@
 {% macro default(ITEMS) %}
-  <div class="row gy-2">
+  <ul>
     {% for ITEM in ITEMS %}
-      <div class="col-12">
-        <div class="row">
-          <div class="col-3">
-            <img class="img-fluid img-thumbnail" src="{{ ITEM.thumb }}">
+      {% if loop.index == 1 %}
+        <li>
+      {% else %}
+        <li class="mt-2">
+      {% endif %}
+        <a href="{{ ITEM.link }}" class="flex flex-row items-center bg-white rounded-lg border shadow-md hover:bg-gray-100">
+          <img class="object-cover w-48 rounded-l-lg" src="{{ ITEM.thumb }}" alt="">
+          <div class="flex flex-col justify-between p-4 leading-normal">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ ITEM.name }}</h5>
+            <p class="mb-3 font-normal text-gray-700">{{ ITEM.description }}</p>
           </div>
-          <div class="col-9">
-            <h2>{{ ITEM.name }}</h2>
-            <p>{{ ITEM.description }}</p>
-            <a href="{{ ITEM.link }}">詳細を見る</a>
-          </div>
-        </div>
-      </div>
+        </a>
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 {% endmacro %}
 
 {% macro small(ITEMS) %}
