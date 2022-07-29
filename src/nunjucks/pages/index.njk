@@ -7,12 +7,14 @@
 
 {% block PAGE_CONTENT %}
   {% include 'top/hero.njk' %}
-  <div class="container py-4">
-    {% include 'top/about.njk' %}
-    {% include 'top/product.njk' %}
-    {% include 'top/news.njk' %}
-    <div class="mt-8">
-      {% include 'components/contact.njk' %}
-    </div>
+  <div class="px-2 py-8">
+    <main class="container mx-auto">
+      {% include 'top/about.njk' %}
+      {% include 'top/product.njk' %}
+      {% include 'top/news.njk' %}
+      <div class="mt-8">
+        {% include 'components/contact.njk' %}
+      </div>
+    </main>
   </div>
 {% endblock %}

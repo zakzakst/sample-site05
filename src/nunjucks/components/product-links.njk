@@ -19,17 +19,22 @@
 {% endmacro %}
 
 {% macro small(ITEMS) %}
-  <div class="row g-3">
+  <ul class="grid grid-cols-4 gap-2">
     {% for ITEM in ITEMS %}
-      <div class="col-3">
-        <div class="card">
-          <img class="card-img-top" src="{{ ITEM.thumb }}">
-          <div class="card-body">
-            <h5 class="card-title">{{ ITEM.name }}</h5>
-            <a href="{{ ITEM.link }}" class="btn btn-primary">詳細を見る</a>
-          </div>
+      <li class="bg-white rounded-lg border border-gray-200 shadow-md">
+        <a href="{{ ITEM.link }}">
+          <img class="rounded-t-lg" src="{{ ITEM.thumb }}" alt="" />
+        </a>
+        <div class="p-5">
+          <a href="{{ ITEM.link }}">
+            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ ITEM.name }}</h5>
+          </a>
+          <a href="{{ ITEM.link }}" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">
+            詳細を見る
+            <i class="fas fa-arrow-right ml-2"></i>
+          </a>
         </div>
-      </div>
+      </li>
     {% endfor %}
-  </div>
+  </ul>
 {% endmacro %}
