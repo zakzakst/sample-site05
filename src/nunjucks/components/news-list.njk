@@ -1,11 +1,13 @@
 {% macro default(ITEMS) %}
-  <div class="list-group list-group-flush">
-    {% for ITEM in ITEMS %}
-      <a href="{{ ITEM.link }}" class="list-group-item list-group-item-action">
-        {{ ITEM.date }}
-        <span class="badge bg-secondary">{{ ITEM.category }}</span>
-        {{ ITEM.title }}
+<ul>
+  {% for ITEM in ITEMS %}
+    <li class="border-b border-gray-400 border-dotted">
+      <a href="{{ ITEM.link }}" class="flex items-center py-3 hover:opacity-50">
+        <span class="w-24">{{ ITEM.date }}</span>
+        <span class="w-24 px-2 py-1 text-center text-xs text-white bg-gray-600 rounded">{{ ITEM.category }}</span>
+        <span class="ml-4">{{ ITEM.title }}</span>
       </a>
-    {% endfor %}
-  </div>
+    </li>
+  {% endfor %}
+</ul>
 {% endmacro %}
