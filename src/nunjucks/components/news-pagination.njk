@@ -1,11 +1,15 @@
 {% macro default(PREV_ITEM, NEXT_ITEM) %}
-  <nav class="mt-5">
-    <ul class="pagination justify-content-center">
+  <nav class="block mt-5 text-center">
+    <ul class="inline-flex -space-x-px">
       {% if PREV_ITEM.title %}
-        <li class="page-item"><a href="{{ PREV_ITEM.link }}" class="page-link">{{ PREV_ITEM.title }}</a></li>
+        <li>
+          <a href="{{ PREV_ITEM.link }}" class="inline-block py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">{{ PREV_ITEM.title }}</a>
+        </li>
       {% endif %}
       {% if NEXT_ITEM.title %}
-        <li class="page-item"><a href="{{ NEXT_ITEM.link }}" class="page-link">{{ NEXT_ITEM.title }}</a></li>
+        <li>
+          <a href="{{ NEXT_ITEM.link }}" class="inline-block py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">{{ NEXT_ITEM.title }}</a>
+        </li>
       {% endif %}
     </ul>
   </nav>
