@@ -1,13 +1,17 @@
 {% macro default(ITEMS) %}
-  <ul class="nav nav-pills">
-    {% for ITEM in ITEMS %}
-      <li class="nav-item">
-        {% if ITEM.active %}
-          <a href="{{ ITEM.link }}" class="nav-link active">{{ ITEM.name }}</a>
-        {% else %}
-          <a href="{{ ITEM.link }}" class="nav-link">{{ ITEM.name }}</a>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
+<ul class="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200">
+  {% for ITEM in ITEMS %}
+    {% if loop.index == ITEMS.length %}
+      <li>
+    {% else %}
+      <li class="mr-2">
+    {% endif %}
+      {% if ITEM.active %}
+        <span class="inline-block p-4 text-blue-600 bg-gray-200 rounded-t-lg">{{ ITEM.name }}</span>
+      {% else %}
+        <a href="{{ ITEM.link }}" class="inline-block p-4 text-blue-600 bg-gray-200 rounded-t-lg hover:text-gray-600 hover:bg-gray-100">{{ ITEM.name }}</a>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
 {% endmacro %}
