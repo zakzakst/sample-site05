@@ -80,7 +80,9 @@
 
 {% block PAGE_CONTENT %}
   {{ BREADCRUMB(PAGE_DATA.BREADCRUMB_ITEMS) }}
-  {{ TABS(TAB_ITEMS) }}
+  <div class="mt-4">
+    {{ TABS(TAB_ITEMS) }}
+  </div>
   <div class="mt-2">
     {{ PRODUCT_LINKS(PRODUCTS) }}
   </div>
