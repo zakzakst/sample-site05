@@ -18,7 +18,12 @@
 
 {# ▼▼▼ コンポーネント読み込み ▼▼▼ #}
 {% from 'components/hero.njk' import default as HERO %}
+{% from 'components/blockquote.njk' import default as BLOCKQUOTE %}
+{% from 'components/box.njk' import default as BOX %}
 {% from 'components/breadcrumb.njk' import default as BREADCRUMB %}
+{% import 'components/heading.njk' as HEADING %}
+{% from 'components/link.njk' import default as LINK %}
+{% from 'components/table.njk' import default as TABLE %}
 {# ▲▲▲ コンポーネント読み込み ▲▲▲ #}
 
 {% block HERO_CONTENT %}
@@ -27,7 +32,27 @@
 
 {% block PAGE_CONTENT %}
   {{ BREADCRUMB(PAGE_DATA.BREADCRUMB_ITEMS) }}
-  <div>ページ内容</div>
+  <div class="mt-8">
+    {{ HEADING.h2('大見出し') }}
+    {{ HEADING.h3('小見出し') }}
+    <p>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。{{ LINK('リンク', '#') }}{{ LINK('外部リンク', '#', 'external') }}</p>
+    <div class="mt-4">
+      {{ BLOCKQUOTE('テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。') }}
+    </div>
+    <div class="mt-4">
+      {{ BOX('テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。<br>テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。') }}
+    </div>
+    <div class="mt-4">
+      {{ TABLE(
+        ['項目名', '色', 'カテゴリー', '値段'],
+        [
+          ['項目1', '色1', 'カテゴリー1', '値段1'],
+          ['項目2', '色2', 'カテゴリー2', '値段2'],
+          ['項目3', '色3', 'カテゴリー3', '値段3']
+        ]
+      ) }}
+    </div>
+  </div>
 {% endblock %}
 
 {% block FIX_CONTENT %}

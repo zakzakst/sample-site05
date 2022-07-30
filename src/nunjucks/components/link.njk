@@ -1,0 +1,10 @@
+{% macro default(TEXT, LINK, TYPE) %}
+  {% if TYPE == 'external' %}
+    <span class="text-blue-500 hover:text-blue-400">
+      <a href="{{ LINK }}" class="underline">{{ TEXT }}</a>
+      <i class="text-sm fas fa-external-link-alt"></i>
+    </span>
+  {% else %}
+    <a href="{{ LINK }}" class="text-blue-500 underline hover:text-blue-400">{{ TEXT }}</a>
+  {% endif %}
+{% endmacro %}

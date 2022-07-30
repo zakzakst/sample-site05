@@ -1,0 +1,24 @@
+{% macro default(HEAD_ITEMS, FOOT_ITEMS_LIST) %}
+<table class="w-full text-sm text-left text-gray-500">
+  <thead class="text-xs text-gray-700 bg-gray-100">
+    <tr>
+      {% for ITEM in HEAD_ITEMS %}
+        <th class="py-3 px-6">{{ ITEM }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for FOOT_ITEMS in FOOT_ITEMS_LIST %}
+    <tr class="bg-white border-b">
+      {% for ITEM in FOOT_ITEMS %}
+        {% if loop.index == 1 %}
+          <th class="py-4 px-6 text-gray-900">{{ ITEM }}</th>
+        {% else %}
+          <th class="py-4 px-6">{{ ITEM }}</th>
+        {% endif %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endmacro %}
