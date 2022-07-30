@@ -33,6 +33,7 @@
 {# ▼▼▼ コンポーネント読み込み ▼▼▼ #}
 {% from 'components/hero.njk' import default as HERO %}
 {% from 'components/breadcrumb.njk' import default as BREADCRUMB %}
+{% from 'components/author.njk' import default as AUTHOR %}
 {% from 'components/news-pagination.njk' import default as NEWS_PAGINATION %}
 {# ▲▲▲ コンポーネント読み込み ▲▲▲ #}
 
@@ -42,7 +43,9 @@
 
 {% block PAGE_CONTENT %}
   {{ BREADCRUMB(PAGE_DATA.BREADCRUMB_ITEMS) }}
-  <div>ページ内容</div>
+  <div class="mt-8">
+    {{ AUTHOR('名前', '紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。紹介文が入ります。', 'https://picsum.photos/id/238/400/400') }}
+  </div>
   {{ NEWS_PAGINATION(PREV_ITEM, NEXT_ITEM) }}
 {% endblock %}
 
