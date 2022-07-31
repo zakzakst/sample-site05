@@ -161,3 +161,109 @@ function GET_HTML_TABS_ITEM($ITEM, $index) {
   }
   return $markup;
 }
+
+// ニュースリスト
+function GET_HTML_NEWS_LIST($ITEMS) {
+  $items_html_arr = array_map(function($ITEM) {
+    $item_html =
+      '<li class="border-b border-gray-400 border-dotted">' .
+        '<a href="' . $ITEM['link'] . '" class="flex items-center py-3 hover:opacity-50">' .
+          '<span class="w-24">' . $ITEM['date'] . '</span>' .
+          '<span class="w-24 px-2 py-1 text-center text-xs text-white bg-gray-600 rounded">' . $ITEM['category'] . '</span>' .
+          '<span class="ml-4">' . $ITEM['title'] . '</span>' .
+        '</a>' .
+      '</li>';
+    return $item_html;
+  }, $ITEMS);
+  $items_html = implode($items_html_arr);
+  $markup =
+    '<ul>' .
+      $items_html .
+    '</ul>';
+  echo $markup;
+}
+
+// ニュースページネーション
+function GET_HTML_NEWS_PAGINATION($PREV_ITEM, $NEXT_ITEM) {
+  $prev_item_html = '';
+  $next_item_html = '';
+  if ($PREV_ITEM) {
+    $prev_item_html =
+      '<li>' .
+        '<a href="' . $PREV_ITEM['href'] . '" class="inline-block py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">' .
+          $PREV_ITEM['title'] .
+        '</a>' .
+      '</li>';
+  }
+  if ($NEXT_ITEM) {
+    $next_item_html =
+      '<li>' .
+        '<a href="' . $NEXT_ITEM['href'] . '" class="inline-block py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">' .
+          $NEXT_ITEM['title'] .
+        '</a>' .
+      '</li>';
+  }
+  $markup =
+    '<nav class="block text-center">' .
+      '<ul class="inline-flex -space-x-px">' .
+        $prev_item_html .
+        $next_item_html .
+      '</ul>' .
+    '</nav>';
+  echo $markup;
+}
+
+// 製品リスト
+function GET_HTML_PRODUCT_LIST($ITEMS) {
+  $items_html_arr = array_map(function($ITEM, $index) {
+    $item_class = 'mt-2';
+    if ($index == 0) {
+      $item_class = '';
+    }
+    $item_html =
+      '<li class="' . $item_class . '">' .
+        '<a href="' . $ITEM['href'] . '" class="flex flex-row items-center bg-white rounded-lg border shadow-md hover:bg-gray-100">' .
+          '<img class="object-cover w-48 rounded-l-lg" src="' . $ITEM['thumb'] . '" alt="">' .
+          '<div class="flex flex-col justify-between p-4 leading-normal">' .
+            '<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">' . $ITEM['name'] . '</h5>' .
+            '<p class="mb-3 font-normal text-gray-700">' . $ITEM['description'] . '</p>' .
+          '</div>' .
+        '</a>' .
+      '</li>';
+    return $item_html;
+  }, $ITEMS, array_keys($ITEMS));
+  $items_html = implode($items_html_arr);
+  $markup =
+    '<ul>' .
+      $items_html .
+    '</ul>';
+  echo $markup;
+}
+
+// 製品リスト（小）
+function GET_HTML_PRODUCT_LIST_SMALL($ITEMS) {
+  $items_html_arr = array_map(function($ITEM) {
+    $item_html =
+      '<li class="bg-white rounded-lg border border-gray-200 shadow-md">' .
+        '<a href="' . $ITEM['href'] . '">' .
+          '<img class="rounded-t-lg" src="' . $ITEM['thumb'] . '" alt="" />' .
+        '</a>' .
+        '<div class="p-5">' .
+          '<a href="' . $ITEM['href'] . '">' .
+            '<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">' . $ITEM['name'] . '</h5>' .
+          '</a>' .
+          '<a href="' . $ITEM['href'] . '" class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800">' .
+            '詳細を見る' .
+            '<i class="fas fa-arrow-right ml-2"></i>' .
+          '</a>' .
+        '</div>' .
+      '</li>';
+    return $item_html;
+  }, $ITEMS);
+  $items_html = implode($items_html_arr);
+  $markup =
+    '<ul class="grid grid-cols-4 gap-2">' .
+      $items_html .
+    '</ul>';
+  echo $markup;
+}

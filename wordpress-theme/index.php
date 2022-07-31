@@ -71,6 +71,94 @@
       'active' => false,
     ),
   );
+
+  $NEWS_LIST_ITEMS = array(
+    array(
+      'date' => '2022/07/01',
+      'category' => 'カテゴリー',
+      'title' => 'ニュースタイトルが入ります。',
+      'link' => '#'
+    ),
+    array(
+      'date' => '2022/06/01',
+      'category' => 'カテゴリー',
+      'title' => 'ニュースタイトルが入ります。',
+      'link' => '#'
+    ),
+    array(
+      'date' => '2022/05/01',
+      'category' => 'カテゴリー',
+      'title' => 'ニュースタイトルが入ります。',
+      'link' => '#'
+    ),
+    array(
+      'date' => '2022/04/01',
+      'category' => 'カテゴリー',
+      'title' => 'ニュースタイトルが入ります。',
+      'link' => '#'
+    ),
+    array(
+      'date' => '2022/03/01',
+      'category' => 'カテゴリー',
+      'title' => 'ニュースタイトルが入ります。',
+      'link' => '#'
+    ),
+    array(
+      'date' => '2022/02/01',
+      'category' => 'カテゴリー',
+      'title' => 'ニュースタイトルが入ります。',
+      'link' => '#'
+    ),
+    array(
+      'date' => '2022/01/01',
+      'category' => 'カテゴリー',
+      'title' => 'ニュースタイトルが入ります。',
+      'link' => '#'
+    ),
+  );
+
+  $PREV_ITEM = array(
+    'title' => '前の記事',
+    'href' => '#',
+  );
+  
+  $NEXT_ITEM = array(
+    'title' => '次の記事',
+    'href' => '#',
+  );
+
+  $PRODUCT_LIST_ITEMS = array(
+    array(
+      'name' => '製品名が入ります',
+      'thumb' => 'https://picsum.photos/id/237/400/400',
+      'description' => '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+      'href' => '#',
+    ),
+    array(
+      'name' => '製品名が入ります',
+      'thumb' => 'https://picsum.photos/id/238/400/400',
+      'description' => '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+      'href' => '#',
+    ),
+    array(
+      'name' => '製品名が入ります',
+      'thumb' => 'https://picsum.photos/id/239/400/400',
+      'description' => '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+      'href' => '#',
+    ),
+    array(
+      'name' => '製品名が入ります',
+      'thumb' => 'https://picsum.photos/id/240/400/400',
+      'description' => '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+      'href' => '#',
+    ),
+    array(
+      'name' => '製品名が入ります',
+      'thumb' => 'https://picsum.photos/id/241/400/400',
+      'description' => '製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。製品説明が入ります。',
+      'href' => '#',
+    ),
+  );
 ?>
 <div class="px-2 py-8">
   <main class="container mx-auto">
@@ -95,10 +183,22 @@
               // include('components/tabs.php');
               GET_HTML_TABS($TAB_ITEMS);
             ?>
-            <?php include('components/news-list.php'); ?>
-            <?php include('components/news-pagination.php'); ?>
-            <?php include('components/product-links.php'); ?>
-            <?php include('components/product-links-small.php'); ?>
+            <?php
+              // include('components/news-list.php');
+              GET_HTML_NEWS_LIST($NEWS_LIST_ITEMS);
+            ?>
+            <?php
+              // include('components/news-pagination.php');
+              GET_HTML_NEWS_PAGINATION($PREV_ITEM, $NEXT_ITEM);
+            ?>
+            <?php
+              // include('components/product-links.php');
+              GET_HTML_PRODUCT_LIST($PRODUCT_LIST_ITEMS);
+            ?>
+            <?php
+              // include('components/product-links-small.php');
+              GET_HTML_PRODUCT_LIST_SMALL($PRODUCT_LIST_ITEMS);
+            ?>
           <?php endwhile; ?>
         <?php else : ?>
           <h2>投稿が見つかりません。</h2>
