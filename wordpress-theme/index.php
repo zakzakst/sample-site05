@@ -10,7 +10,13 @@
   <main class="container mx-auto">
     <div class="flex">
       <div class="w-2/3 pr-6">
-        <div>コンテンツ</div>
+        <?php if (have_posts()) : ?>
+          <?php while (have_posts()) : the_post(); ?>
+            <?php the_content(); ?>
+          <?php endwhile; ?>
+        <?php else : ?>
+          <h2>投稿が見つかりません。</h2>
+        <?php endif; ?>
       </div>
       <div class="w-1/3 flex-shrink-0">
         <?php include('components/aside.php'); ?>
