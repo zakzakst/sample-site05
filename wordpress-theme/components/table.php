@@ -35,7 +35,7 @@ $BODY_ROWS = array(
           <?php if ($index == 0): ?>
             <th class="py-4 px-6 text-gray-900"><?php echo $ITEM; ?></th>
           <?php else: ?>
-            <th class="py-4 px-6"><?php echo $ITEM; ?></th>
+            <td class="py-4 px-6"><?php echo $ITEM; ?></td>
           <?php endif ?>
         <?php endforeach; ?>
       </tr>

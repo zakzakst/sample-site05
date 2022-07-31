@@ -6,7 +6,7 @@ $BREADCRUMB_ITEMS = array(
     'current' => false,
   ),
   array(
-    'name' => 'よくあるご質問',
+    'name' => 'ページ名',
     'href' => '#',
     'current' => false,
   ),
