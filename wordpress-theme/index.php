@@ -205,7 +205,7 @@
         <?php endif; ?>
       </div>
       <div class="w-1/3 flex-shrink-0">
-        <?php include('components/aside.php'); ?>
+        <?php get_sidebar(); ?>
       </div>
     </div>
     <div class="mt-8">
