@@ -15,6 +15,28 @@
     <div class="flex">
       <div class="w-2/3 pr-6">
         <div class="test">投稿ページ</div>
+        <time>
+          <?php echo get_the_date(); ?>
+          <?php echo get_the_time(); ?>
+        </time>
+        <?php if (has_tag()) : ?>
+          <div>
+            <?php the_tags('<span>', '</span>、<span>', '</span>'); ?>
+          </div>
+        <?php endif; ?>
+        <div>
+          <?php the_category(','); ?>
+        </div>
+        <p><?php the_author(); ?></p>
+        <p><?php the_author_link(); ?></p>
+        <?php
+          $AUTHOR_ITEM = array(
+            'name' => get_the_author_meta('nickname'),
+            'text' => get_the_author_meta('description'),
+            'thumb' => 'https://picsum.photos/id/238/400/400',
+          );
+          GET_HTML_AUTHOR($AUTHOR_ITEM);
+        ?>
         <div><a href="<?php echo get_category_link_by_slug('test') ?>">テスト一覧</a></div>
         <div><a href="<?php echo get_category_link_by_slug('uncategorized') ?>">未分類一覧</a></div>
         <?php if (has_post_thumbnail()) : ?>
