@@ -12,7 +12,7 @@
   <main class="container mx-auto">
     <div class="flex">
       <div class="w-2/3 pr-6">
-        <div>投稿ページ</div>
+        <div class="test">投稿ページ</div>
         <div><a href="<?php echo get_category_link_by_slug('test') ?>">テスト一覧</a></div>
         <div><a href="<?php echo get_category_link_by_slug('uncategorized') ?>">未分類一覧</a></div>
         <?php the_content(); ?>

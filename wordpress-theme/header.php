@@ -6,7 +6,6 @@
     // include('components/head/meta.php');
     // include('components/head/ogp.php');
     // include('components/head/schema.php');
-    include('components/head/files.php');
     // include('components/page-loader/page-loader-head.php');
     wp_head();
   ?>

@@ -1,6 +1,4 @@
 <?php
-// タイトルタグ挿入
-add_theme_support( 'title-tag' );
 
 // セパレーターの変更
 function wp_document_title_separator( $separator ) {
