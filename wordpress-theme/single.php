@@ -37,6 +37,10 @@
           );
           GET_HTML_AUTHOR($AUTHOR_ITEM);
         ?>
+        <?php
+          $prev_next = get_prev_next_posts();
+          GET_HTML_NEWS_PAGINATION($prev_next[0], $prev_next[1]);
+        ?>
         <div><a href="<?php echo get_category_link_by_slug('test') ?>">テスト一覧</a></div>
         <div><a href="<?php echo get_category_link_by_slug('uncategorized') ?>">未分類一覧</a></div>
         <?php if (has_post_thumbnail()) : ?>
