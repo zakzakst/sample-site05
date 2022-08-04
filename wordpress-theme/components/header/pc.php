@@ -2,27 +2,27 @@
 $NAV_ITEMS = array(
   array(
     'id' => 'about',
-    'link' => '/about.html',
+    'href' => home_url('/sample-page'),
     'label' => '○○○○について',
   ),
   array(
     'id' => 'menu',
-    'link' => '/menu.html',
+    'href' => '/menu.html',
     'label' => 'メニュー',
   ),
   array(
     'id' => 'cafe',
-    'link' => '/cafe.html',
+    'href' => '/cafe.html',
     'label' => '店内設備',
   ),
   array(
     'id' => 'news',
-    'link' => '/news/',
+    'href' => '/news/',
     'label' => 'お知らせ',
   ),
   array(
     'id' => 'recruit',
-    'link' => '/recruit.html',
+    'href' => '/recruit.html',
     'label' => '採用情報',
   ),
 );
@@ -31,7 +31,7 @@ $NAV_ITEMS = array(
 <!-- ▼▼▼ ヘッダー（PC） ▼▼▼ -->
 <nav class="bg-gray-900 px-2 py-2.5 text-white">
   <div class="container flex flex-wrap justify-between items-center mx-auto">
-    <h1>LOGO</h1>
+    <h1><a href="<?php echo esc_url(home_url()); ?>">LOGO</a></h1>
     <button type="button" class="lg:hidden px-3 py-2.5 text-sm text-white bg-blue-700 rounded-lg hover:bg-blue-800">
       <i class="fas fa-bars"></i>
     </button>
