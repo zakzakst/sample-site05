@@ -2,7 +2,7 @@
 // 著者
 function GET_HTML_AUTHOR($ITEM) {
   $markup =
-    '<div class="flex p-4 rounded-lg bg-gray-200 space-x-4">' .
+    '<a href="' . $ITEM['href'] . '" class="flex p-4 rounded-lg bg-gray-200 space-x-4">' .
       '<div class="flex-shrink-0">' .
         '<img class="w-16 h-16 rounded-full" src="' . $ITEM['thumb'] . '" alt="' . $ITEM['name'] . 'の写真">' .
       '</div>' .
@@ -10,7 +10,7 @@ function GET_HTML_AUTHOR($ITEM) {
         '<p class="text-sm font-medium text-gray-900">' . $ITEM['name'] . '</p>' .
         '<p class="text-sm text-gray-500">' . $ITEM['text'] . '</p>' .
       '</div>' .
-    '</div>';
+    '</a>';
   echo $markup;
 }
 

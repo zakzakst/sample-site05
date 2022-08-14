@@ -28,9 +28,11 @@
           <?php the_category(','); ?>
         </div>
         <p><?php the_author(); ?></p>
-        <p><?php the_author_link(); ?></p>
+        <!-- <p><?php the_author_link(); ?></p> -->
+        <p><?php the_author_posts_link(); ?></p>
         <?php
           $AUTHOR_ITEM = array(
+            'href' => get_author_posts_url($post->post_author),
             'name' => get_the_author_meta('nickname'),
             'text' => get_the_author_meta('description'),
             'thumb' => 'https://picsum.photos/id/238/400/400',
