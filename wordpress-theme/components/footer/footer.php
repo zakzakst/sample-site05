@@ -75,6 +75,9 @@ $SNS_ITEMS = array(
     'icon' => 'fab fa-twitter',
   ),
 );
+// TODO: フッターリンクのカスタムメニュー参照
+// $ITEMS = GET_MENU_ITEMS('footer_links');
+// var_dump($ITEMS);
 ?>
 
 <!-- ▼▼▼ フッター ▼▼▼ -->

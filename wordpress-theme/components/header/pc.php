@@ -1,31 +1,36 @@
 <?php
-$NAV_ITEMS = array(
-  array(
-    'id' => 'about',
-    'href' => home_url('/sample-page'),
-    'label' => '○○○○について',
-  ),
-  array(
-    'id' => 'menu',
-    'href' => '/menu.html',
-    'label' => 'メニュー',
-  ),
-  array(
-    'id' => 'cafe',
-    'href' => '/cafe.html',
-    'label' => '店内設備',
-  ),
-  array(
-    'id' => 'news',
-    'href' => '/news/',
-    'label' => 'お知らせ',
-  ),
-  array(
-    'id' => 'recruit',
-    'href' => '/recruit.html',
-    'label' => '採用情報',
-  ),
-);
+// $NAV_ITEMS = array(
+//   array(
+//     'id' => 'about',
+//     'href' => home_url('/sample-page'),
+//     'label' => '○○○○について',
+//   ),
+//   array(
+//     'id' => 'menu',
+//     'href' => '/menu.html',
+//     'label' => 'メニュー',
+//   ),
+//   array(
+//     'id' => 'cafe',
+//     'href' => '/cafe.html',
+//     'label' => '店内設備',
+//   ),
+//   array(
+//     'id' => 'news',
+//     'href' => '/news/',
+//     'label' => 'お知らせ',
+//   ),
+//   array(
+//     'id' => 'recruit',
+//     'href' => '/recruit.html',
+//     'label' => '採用情報',
+//   ),
+// );
+
+// $locations = get_nav_menu_locations();
+// $items = wp_get_nav_menu_items('header_links');
+$NAV_ITEMS = GET_MENU_ITEMS('header_links');
+// TODO: 現在のページを参照して、クラスをつける
 ?>
 
 <!-- ▼▼▼ ヘッダー（PC） ▼▼▼ -->
@@ -39,7 +44,7 @@ $NAV_ITEMS = array(
       <ul class="flex flex-row mr-4">
         <?php foreach ($NAV_ITEMS as $ITEM) : ?>
           <li>
-            <a href="<?php echo $ITEM['href']; ?>" class="block px-4 py-2"><?php echo $ITEM['label']; ?></a>
+            <a href="<?php echo $ITEM->url; ?>" class="block px-4 py-2"><?php echo $ITEM->title; ?></a>
           </li>
         <?php endforeach; ?>
       </ul>
