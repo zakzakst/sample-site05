@@ -44,12 +44,13 @@ $NAV_ITEMS = array(
         <?php endforeach; ?>
       </ul>
       <div class="flex">
-        <div class="relative w-48">
+        <?php get_search_form(); ?>
+        <!-- <div class="relative w-48">
           <input type="search" class="block p-2.5 w-full z-20 text-sm bg-gray-50 rounded-lg border border-gray-300" placeholder="キーワードを入力" required>
           <button type="button" class="absolute top-0 bottom-0 right-0 px-3 py-2.5 text-sm text-white bg-blue-700 rounded-r-lg hover:bg-blue-800">
             <i class="fas fa-search"></i>
           </button>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>

@@ -10,3 +10,8 @@ https://showjinx.hatenablog.com/entry/tag-existence-wordpress
 
 - そのユーザーには指定したメタフィールドが存在しない場合、空の文字列が返されます。
 https://wpdocs.osdn.jp/関数リファレンス/get_the_author_meta
+
+
+## 後で見る
+- 複数の検索フォームと検索結果ページを作る方法
+https://yumegori.com/wordpress-searchform20200107
