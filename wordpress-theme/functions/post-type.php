@@ -34,3 +34,49 @@ function add_article_post_rewrite_rules($post_rewrite) {
   return $return_rule;
 }
 add_filter('post_rewrite_rules', 'add_article_post_rewrite_rules');
+
+// カスタム投稿タイプの設定
+function create_post_type() {
+  $supports = [
+    'title',
+    'editor',
+    'author',
+    'thumbnail',
+    'excerpt',
+    'revisions',
+    'post-formats',
+  ];
+  register_post_type(
+    'test',
+    array(
+      'label' => 'テスト',
+      'public' => true,
+      'has_archive' => true,
+      'menu_position' => 5,
+      'supports' => $supports,
+      'show_in_rest' => true,
+    ),
+  );
+}
+add_action('init', 'create_post_type');
+
+// カスタムタクソノミー
+function set_taxonomy_test() {
+  register_taxonomy(
+    'tax1',
+    'test',
+    array(
+      'label' => 'テスト タクソノミー1',
+      'rewrite' => array('slug' => 'tax1'),
+      'capabilities' => array(
+        'assign_terms' => 'edit_guides',
+        'edit_terms' => 'publish_guides',
+      ),
+      'public' => true,
+      'show_ui' => true,
+      'show_in_nav_menus' => true,
+      'show_in_rest' => true,
+    ),
+  );
+}
+add_action('init', 'set_taxonomy_test');

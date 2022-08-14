@@ -11,6 +11,8 @@ https://showjinx.hatenablog.com/entry/tag-existence-wordpress
 - そのユーザーには指定したメタフィールドが存在しない場合、空の文字列が返されます。
 https://wpdocs.osdn.jp/関数リファレンス/get_the_author_meta
 
+- カスタム投稿タイプでブロックエディタを有効にする方法
+https://itwebmkt.jp/setting-custom-post-type-gutenberg/
 
 ## 後で見る
 - 複数の検索フォームと検索結果ページを作る方法
