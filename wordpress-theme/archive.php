@@ -2,7 +2,7 @@
 
 <?php
   $HERO_ITEM = array(
-    'title' => '一覧ページ',
+    'title' => get_the_archive_title(),
     'text' => 'サブタイトル',
   );
   GET_HTML_HERO($HERO_ITEM);
