@@ -183,6 +183,20 @@ function GET_HTML_NEWS_LIST($ITEMS) {
   echo $markup;
 }
 
+// ニュースリスト項目
+function GET_HTML_NEWS_LIST_ITEM($ITEM) {
+  // var_dump($ITEM);
+  $markup =
+    '<li class="border-b border-gray-400 border-dotted">' .
+      '<a href="' . $ITEM['href'] . '" class="flex items-center py-3 hover:opacity-50">' .
+        '<span class="w-24">' . $ITEM['date'] . '</span>' .
+        '<span class="w-24 px-2 py-1 text-center text-xs text-white bg-gray-600 rounded">' . $ITEM['category'] . '</span>' .
+        '<span class="ml-4">' . $ITEM['title'] . '</span>' .
+      '</a>' .
+    '</li>';
+  echo $markup;
+}
+
 // ニュースページネーション
 function GET_HTML_NEWS_PAGINATION($PREV_ITEM, $NEXT_ITEM) {
   $prev_item_html = '';
