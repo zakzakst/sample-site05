@@ -64,6 +64,9 @@ $ASIDE_ITEMS = array(
 
 <!-- ▼▼▼ サイドバー ▼▼▼ -->
 <aside>
+  <ul>
+    <?php wp_get_archives(); ?>
+  </ul>
   <div class="flex">
     <div class="relative w-full">
       <input type="search" class="block p-2.5 w-full z-20 text-sm bg-gray-50 rounded-lg border border-gray-300" placeholder="キーワードを入力" required>
