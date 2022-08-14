@@ -22,9 +22,12 @@
                 'date' => get_the_date(),
                 'category' => $categories[0]->cat_name,
                 'title' => get_the_title(),
+                'description' => get_the_excerpt(),
+                'thumb' => get_the_post_thumbnail_url(),
               );
               // var_dump($news_list_item);
-              GET_HTML_NEWS_LIST_ITEM($news_list_item);
+              // GET_HTML_NEWS_LIST_ITEM($news_list_item);
+              GET_HTML_PRODUCT_LIST_ITEM($news_list_item);
             ?>
               <!-- <li class="border-b border-gray-400 border-dotted">
                 <a href="<?php the_permalink(); ?>" class="flex items-center py-3 hover:opacity-50">

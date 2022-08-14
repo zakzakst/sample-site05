@@ -254,6 +254,21 @@ function GET_HTML_PRODUCT_LIST($ITEMS) {
   echo $markup;
 }
 
+// 製品リスト項目
+function GET_HTML_PRODUCT_LIST_ITEM($ITEM) {
+  $markup =
+    '<li class="mt-2">' .
+      '<a href="' . $ITEM['href'] . '" class="flex flex-row items-center bg-white rounded-lg border shadow-md hover:bg-gray-100">' .
+        '<img class="object-cover w-48 rounded-l-lg" src="' . $ITEM['thumb'] . '" alt="">' .
+        '<div class="flex flex-col justify-between p-4 leading-normal">' .
+          '<h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">' . $ITEM['title'] . '</h5>' .
+          '<p class="mb-3 font-normal text-gray-700">' . $ITEM['description'] . '</p>' .
+        '</div>' .
+      '</a>' .
+    '</li>';
+  echo $markup;
+}
+
 // 製品リスト（小）
 function GET_HTML_PRODUCT_LIST_SMALL($ITEMS) {
   $items_html_arr = array_map(function($ITEM) {
