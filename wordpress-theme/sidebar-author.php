@@ -64,14 +64,7 @@ $ASIDE_ITEMS = array(
 
 <!-- ▼▼▼ サイドバー ▼▼▼ -->
 <aside>
-  <?php if (is_active_sidebar('test')) : ?>
-    <ul>
-      <?php dynamic_sidebar('test'); ?>
-    </ul>
-  <?php endif; ?>
-  <ul>
-    <?php wp_get_archives(); ?>
-  </ul>
+  <p>著者</p>
   <div class="flex">
     <div class="relative w-full">
       <input type="search" class="block p-2.5 w-full z-20 text-sm bg-gray-50 rounded-lg border border-gray-300" placeholder="キーワードを入力" required>

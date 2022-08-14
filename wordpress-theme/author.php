@@ -22,7 +22,7 @@
         <?php endif; ?>
       </div>
       <div class="w-1/3 flex-shrink-0">
-        <?php get_sidebar(); ?>
+        <?php get_sidebar('author'); ?>
       </div>
     </div>
     <div class="mt-8">
