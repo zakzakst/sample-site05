@@ -15,6 +15,7 @@
     <div class="flex">
       <div class="w-2/3 pr-6">
         <div class="test">投稿ページ</div>
+        <a href="<?php echo get_post_type_archive_link(get_post()->post_type); ?>">一覧リンク</a>
         <?php
           // $test = get_the_terms(get_the_ID(), 'country');
           // var_dump($test);
