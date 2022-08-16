@@ -18,7 +18,7 @@
           <a href="<?php the_permalink(); ?>">リンク</a>
         <?php endwhile; else : ?>
           <!-- TODO: この記述の必要性聞いてみる。404ページ作れば問題ない？ -->
-          <h2>投稿が見つかりません。でした</h2>
+          <h2>投稿が見つかりませんでした。</h2>
         <?php endif; ?>
       </div>
       <div class="w-1/3 flex-shrink-0">

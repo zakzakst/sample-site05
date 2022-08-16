@@ -3,7 +3,7 @@
 <?php
   $HERO_ITEM = array(
     'title' => get_the_archive_title(),
-    'text' => 'カテゴリー一覧',
+    'text' => 'タクソノミー一覧',
   );
   GET_HTML_HERO($HERO_ITEM);
 ?>
@@ -12,6 +12,13 @@
   <main class="container mx-auto">
     <div class="flex">
       <div class="w-2/3 pr-6">
+        <?php
+          if (is_tax()) {
+            echo get_query_var('taxonomy');
+            single_term_title();
+          }
+        ?>
+        <!-- TODO: タクソノミー一覧の記事表示上手くいかない。タイミング見て調べたり聞いたりする -->
         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
           <?php the_title(); ?>
           <?php the_excerpt(); ?>
