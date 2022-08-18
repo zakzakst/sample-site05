@@ -42,6 +42,9 @@
           <!-- TODO: この記述の必要性聞いてみる。404ページ作れば問題ない？ -->
           <h2>投稿が見つかりませんでした。</h2>
         <?php endif; ?>
+
+        <?php get_template_part('partials/sub'); ?>
+
       </div>
       <div class="w-1/3 flex-shrink-0">
         <?php get_sidebar(); ?>
